@@ -1,0 +1,12 @@
+{
+  "name": "core.view",
+  "api": {
+    "show": {"type": "method", "value": ["string"]},
+    "isSecure": {"type": "method", "value": [], "ret": "boolean" },
+    "close": {"type": "method", "value": []},
+    "postMessage": {"type": "method", "value": ["object"]},
+  
+    "message": {"type": "event", "value": "object"},
+    "onClose": {"type": "event", "value": []}
+  }
+}

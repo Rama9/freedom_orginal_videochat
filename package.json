@@ -1,0 +1,79 @@
+{
+  "name": "freedom",
+  "description": "Embracing a distributed web",
+  "version": "0.6.5",
+  "homepage": "http://freedomjs.org",
+  "bugs": {
+    "url": "http://github.com/freedomjs/freedom/issues",
+    "email": "freedom@cs.washington.edu"
+  },
+  "contributors": [
+    {
+      "name": "Will Scott",
+      "email": "willscott@gmail.com",
+      "url": "https://wills.co.tt/"
+    },
+    {
+      "name": "Raymond Cheng",
+      "email": "ryscheng@cs.washington.edu",
+      "url": "http://raymondcheng.net"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freedomjs/freedom"
+  },
+  "main": "Gruntfile.js",
+  "browser": "src/util/workerEntry.js",
+  "devDependencies": {
+    "browserify-istanbul": "^0.1.2",
+    "es5-shim": "^4.0.0",
+    "es6-promise": "^1.0.0",
+    "folderify": "^0.6.0",
+    "grunt": "~0.4.3",
+    "grunt-browserify": "^3.2.0",
+    "grunt-bump": "0.0.15",
+    "grunt-codeclimate-reporter": "^1.0.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-yuidoc": "~0.5.0",
+    "grunt-coveralls": "~1.0.0",
+    "grunt-extract-sourcemap": "^0.1.12",
+    "grunt-gitinfo": "~0.1.6",
+    "grunt-karma": "~0.9.0",
+    "grunt-npm": "0.0.2",
+    "grunt-prompt": "^1.2.1",
+    "grunt-shell": "^1.1.1",
+    "istanbul": "~0.3.0",
+    "karma": "~0.12.21",
+    "karma-chrome-launcher": "~0.1.3",
+    "karma-coverage": "~0.2.6",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-jasmine": "~0.2.2",
+    "karma-jasmine-html-reporter": "^0.1.5",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-sauce-launcher": "~0.2.8",
+    "karma-story-reporter": "^0.2.2",
+    "karma-unicorn-reporter": "^0.1.4",
+    "webrtc-adapter": "0.0.4"
+  },
+  "scripts": {
+    "test": "grunt ci --verbose",
+    "prepublish": "grunt default"
+  },
+  "dependencies": {
+    "glob": "^4.0.6",
+    "include-folder": "^0.7.0",
+    "node-json-minify": "^0.1.3-a"
+  },
+  "readme": "freedom.js\n=======\n[![Build Status](https://travis-ci.org/freedomjs/freedom.png?branch=master)](https://travis-ci.org/freedomjs/freedom)\n[![Coverage Status](https://coveralls.io/repos/freedomjs/freedom/badge.png?branch=master)](https://coveralls.io/r/freedomjs/freedom?branch=master)\n[![Selenium Test Status](https://saucelabs.com/browser-matrix/freedomjs.svg)](https://saucelabs.com/u/freedomjs)\n\nfreedom.js is a framework for building peer-to-peer (P2P) web apps. \nfreedom.js makes it easy to quickly create social interactive applications that \ninstantly work in modern web browsers, Chrome packaged apps, Firefox extensions, \nnode.js, and native mobile apps. Because freedom.js\napps are just JavaScript, they can be distributed as packages on an app store or\nhosted on static web servers. We're bringing peer-to-peer back, baby.\n\nfreedom.js comes with a tested set of implementations for storage, \nnetwork communication, and navigating the social graph. \nThe library exposes an architecture allowing you to build, think about, \nand debug your application from the perspective of a single user.\n\nUse freedom.js\n---------\n\nIf you want a built version of freedom.js into your website, grab a copy from our CDN:\n\nWebsites: \n* [freedom.latest.js](http://freedomjs.org/dist/freedom/latest/freedom.js) (unstable)\n* [freedom.v0.6.1.js](http://freedomjs.org/dist/freedom/v0.6.1/freedom.v0.6.1.js) (stable)\n\nChrome Apps:\n* [freedom-for-chrome.latest.js](http://freedomjs.org/dist/freedom-for-chrome/freedom-for-chrome.latest.js) (unstable)\n* [freedom-for-chrome.v0.4.1.js](http://freedomjs.org/dist/freedom-for-chrome/freedom-for-chrome.v0.4.1.js) (stable)\n\nFirefox Extensions:\n* [freedom-for-firefox.latest.jsm](http://freedomjs.org/dist/freedom-for-firefox/freedom-for-firefox.latest.jsm) (unstable)\n* [freedom-for-firefox.v0.5.0.jsm](http://freedomjs.org/dist/freedom-for-firefox/freedom-for-firefox.v0.5.0.jsm) (stable)\n\nfreedom, freedom-for-node, freedom-for-chrome, and freedom-for-firefox also exist as npm packages\n\n    npm install freedom\n    npm install freedom-for-node\n    npm install freedom-for-chrome\n    npm install freedom-for-firefox\n\nTo track progress of freedom.js for other platforms, check out these other repositories:\n* [freedom-for-node](https://github.com/freedomjs/freedom-for-node) - Node.js apps\n* [freedom-for-chrome](https://github.com/freedomjs/freedom-for-chrome) - Chrome Packaged Apps\n* [freedom-for-firefox](https://github.com/freedomjs/freedom-for-firefox) - Firefox extensions\n\nMore documentation for building freedom.js, and including it in your project is\non our GitHub [wiki](https://github.com/freedomjs/freedom/wiki).\n\nSee freedom.js\n-------\n\n[Demos](http://freedomjs.org/demo/) show many of the common freedom.js patterns.\n\nTo run the demonstrations locally, run ```grunt demo```.\n\nNOTE: freedom.js will not work when included as a ```file://``` URL (since reading from other file protocol URLs is disallowed). \nfreedom.js is being developed against current versions of Chrome and Firefox.\n\nBuild freedom.js\n---------\n\nTo create your own freedom.js, run [```grunt```](http://gruntjs.com) in the main repository.  This will compile, lint, unit test, and optionally compress the code base. freedom.js can also be included in your project as an NPM dependency:\n\n    npm install freedom --save\n\nOther helpful grunt commands:\n* ```grunt freedom``` - Build freedom.js and run phantomjs unit tests\n* ```grunt demo``` - Build and run demos\n* ```grunt test``` - Run unit tests in Chrome and Firefox\n* ```grunt debug``` - Build all tests and launch a webserver. freedom.js unit and integration tests can then be run by navigating to http://localhost:8000/_SpecRunner.html\n\nHelp freedom.js\n---------\n\nWe welcome contributions and pull requests! A set of current issues are maintained in the issues section of this repository. In addition, we would be happy to help you work through bugs with your use of the library and suggest solutions on our mailing list ([freedom@cs.washington.edu](mailto:freedom@cs.washington.edu)).\n\nPull requests are automatically reviewed by travis to verify code quality and unit tests. You can predict that a pull request will fail if running ```grunt test``` locally fails.\n\nInternal documentation for the library is [automatically generated](http://freedomjs.org/docs/master/doc/) and provides a reasonable starting point for understanding the internals of freedom.js.\n",
+  "readmeFilename": "README.md",
+  "_id": "freedom@0.6.5",
+  "dist": {
+    "shasum": "8413fe5af61c0be4e3ef0caf5f2d49d5468ef552"
+  },
+  "_from": "freedom@",
+  "_resolved": "https://registry.npmjs.org/freedom/-/freedom-0.6.5.tgz"
+}
